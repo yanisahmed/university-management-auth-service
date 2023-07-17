@@ -25,3 +25,7 @@ Database password : DythMHKdyZtJtJXu
 
 ts-node-dev
 yarn add ts-node-dev --dev
+
+eslint ,prettier , husky , lint-stage
+
+yarn add cors
