@@ -1,0 +1,13 @@
+yarn add express
+yarn add -D typescript
+yarn add mongoose
+
+tsc --init
+
+update root directory to src
+update output directory to dist
+
+add gitignore
+
+yarn add dotenv
+
