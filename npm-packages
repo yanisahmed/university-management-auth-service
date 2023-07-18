@@ -11,3 +11,21 @@ add gitignore
 
 yarn add dotenv
 
+11-3
+------
+
+1. Jira - setup express mongoose cors parser 
+2. git checkout -b new branch
+3.connect mongoose on server.ts
+4. setup express on app.ts file
+
+yarn add -D @types/express
+
+Database password : DythMHKdyZtJtJXu
+
+ts-node-dev
+yarn add ts-node-dev --dev
+
+eslint ,prettier , husky , lint-stage
+
+yarn add cors
