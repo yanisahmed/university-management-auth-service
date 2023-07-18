@@ -29,3 +29,6 @@ yarn add ts-node-dev --dev
 eslint ,prettier , husky , lint-stage
 
 yarn add cors
+
+https://blog.logrocket.com/linting-typescript-eslint-prettier/
+https://typicode.github.io/husky/getting-started.html
