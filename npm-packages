@@ -32,3 +32,4 @@ yarn add cors
 
 https://blog.logrocket.com/linting-typescript-eslint-prettier/
 https://typicode.github.io/husky/getting-started.html
+lint-staged
