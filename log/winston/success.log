@@ -1,7 +1,0 @@
-Sat Jul 22 2023 : 15 : 5: 21 [PH] info Database Connection was Failed The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
-Sat Jul 22 2023 : 15 : 7: 32 [PH] info Database Connected
-Sat Jul 22 2023 : 15 : 7: 32 [PH] info App listening on port 5000
-Sat Jul 22 2023 : 15 : 8: 15 [PH] info Database Connected
-Sat Jul 22 2023 : 15 : 8: 15 [PH] info App listening on port 5000
-Sat Jul 22 2023 : 15 : 9: 28 [PH] info Database Connected
-Sat Jul 22 2023 : 15 : 9: 28 [PH] info App listening on port 5000
