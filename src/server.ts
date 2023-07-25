@@ -1,18 +1,48 @@
-import mongoose from 'mongoose'
-import app from './app'
-import config from './config'
+/* eslint-disable no-console */
+import { Server } from 'http';
+import mongoose from 'mongoose';
+import app from './app';
+import config from './config/index';
+import { errorLogger, logger } from './shared/logger';
 
-async function boostrap() {
+process.on('uncaughtException', error => {
+  errorLogger.error(error);
+  process.exit(1);
+});
+
+let server: Server;
+
+async function bootstrap() {
   try {
-    await mongoose.connect(config.database_url as string)
-    console.log(`Database Connected`)
+    await mongoose.connect(config.database_url as string);
+    // logger.info(`🛢   Database is connected successfully`);
+    console.log(`Database is connected successfully`);
 
-    app.listen(config.port, () => {
-      console.log(`Example app listening on port ${config.port}`)
-    })
+    server = app.listen(config.port, () => {
+      logger.info(`Application  listening on port ${config.port}`);
+      // console.log(`Application  listening on port ${config.port}`)
+    });
   } catch (err) {
-    console.log(`Database Connection Failed`, err)
+    errorLogger.error('Failed to connect database', err);
   }
+
+  process.on('unhandledRejection', error => {
+    if (server) {
+      server.close(() => {
+        errorLogger.error(error);
+        process.exit(1);
+      });
+    } else {
+      process.exit(1);
+    }
+  });
 }
 
-boostrap()
+bootstrap();
+
+process.on('SIGTERM', () => {
+  logger.info('SIGTERM is received');
+  if (server) {
+    server.close();
+  }
+});
