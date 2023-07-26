@@ -4,6 +4,20 @@ import {
   IAcademiSemester,
 } from './academicSemester.inteface';
 
+const Month = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
 const academicSemesterSchema = new Schema<IAcademiSemester>(
   {
     title: {
@@ -23,38 +37,12 @@ const academicSemesterSchema = new Schema<IAcademiSemester>(
     startMonth: {
       type: String,
       required: true,
-      enum: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-      ],
+      enum: Month,
     },
     endMonth: {
       String,
       required: true,
-      enum: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-      ],
+      enum: Month,
     },
   },
   {
