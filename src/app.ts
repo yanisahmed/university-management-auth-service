@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import cors from 'cors';
-import { UserRoutes } from './app/modules/user/user.route';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
+import router from './app/routes';
 const app: Application = express();
 
 app.use(cors());
@@ -10,9 +10,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/api/v1', router);
+
 // Application Routes
 // http://localhost:5000/api/v1/users/create-user
-app.use('/api/v1/users', UserRoutes);
 
 // //Testing
 // app.get('/', async (req: Request, res: Response, next: NextFunction) => {
